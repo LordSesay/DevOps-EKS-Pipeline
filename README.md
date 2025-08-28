@@ -71,11 +71,6 @@ Modern application delivery faces challenges such as:
 ├── Dockerfile
 └── assets/
 └── eks-pipeline-architecture.png
-
-yaml
-Copy
-Edit
-
 ---
 
 ## 💼 Business Use Case
