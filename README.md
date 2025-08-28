@@ -11,10 +11,10 @@
 
 Modern application delivery faces challenges such as:
 
-- **Manual deployments** prone to human error
-- **Slow release cycles** due to fragmented tooling
-- **Lack of visibility** in build and deploy processes
-- **Environment inconsistencies** across dev/staging/prod
+- **Manual deployments** prone to human error  
+- **Slow release cycles** due to fragmented tooling  
+- **Lack of visibility** in build and deploy processes  
+- **Environment inconsistencies** across dev/staging/prod  
 
 **DevOps EKS Pipeline** solves these with an automated CI/CD solution built with Terraform, Jenkins, Docker, and Amazon EKS.
 
@@ -22,11 +22,11 @@ Modern application delivery faces challenges such as:
 
 ## 🎯 Project Goals
 
-- Provision a production-ready EKS cluster with Terraform
-- Use Jenkins to build and push Docker containers
-- Deploy to EKS via automated Jenkins pipeline
-- Ensure scalability, observability, and maintainability of application infrastructure
-- Practice DevOps best practices on AWS
+- Provision a production-ready EKS cluster with Terraform  
+- Use Jenkins to build and push Docker containers  
+- Deploy to EKS via automated Jenkins pipeline  
+- Ensure scalability, observability, and maintainability of application infrastructure  
+- Practice DevOps best practices on AWS  
 
 ---
 
@@ -34,32 +34,48 @@ Modern application delivery faces challenges such as:
 
 | Tool/Service         | Role                                                          |
 |----------------------|---------------------------------------------------------------|
-| **Terraform**        | Provision AWS resources (VPC, IAM, EKS)                       |
+| **Terraform**        | Provision AWS resources (VPC, IAM, EKS, ECR)                  |
 | **Amazon EKS**       | Host the Kubernetes workloads                                 |
 | **Jenkins (on EC2)** | CI/CD server to build, push, and deploy containers            |
-| **Docker**           | Containerize frontend/backend applications                    |
-| **Kubernetes (EKS)** | Deploy and orchestrate containers                             |
+| **Docker**           | Containerize application                                      |
+| **Kubernetes (EKS)** | Deploy and orchestrate workloads                              |
 | **AWS CLI + IAM**    | Manage infrastructure authentication                          |
 
 ---
 
 ## 🔁 How It Works
 
-1. **Push code to GitHub**
-2. **Jenkins pulls code and builds Docker image**
-3. **Image pushed to AWS ECR**
-4. **Jenkins triggers a `kubectl apply` to update deployment in EKS**
-5. **Application served via LoadBalancer on EKS**
+1. **Push code to GitHub**  
+2. **Jenkins pulls code and builds Docker image**  
+3. **Image pushed to AWS ECR**  
+4. **Jenkins triggers a `kubectl apply` to update deployment in EKS**  
+5. **Application served via LoadBalancer on EKS**  
 
 ---
 
 ## 🧩 Architecture Diagram
 
-*(Diagram goes here — saved in /assets)*
+<p align="center">
+  <img src="assets/eks-pipeline-architecture.png" alt="EKS Pipeline Architecture" width="80%">
+</p>
 
 ---
 
 ## 🛠 Folder Structure
+
+.
+├── Jenkinsfile # CI/CD pipeline definition
+├── terraform/ # IaC for EKS, VPC, IAM, ECR
+├── k8s/ # Kubernetes manifests (deployment, service)
+├── app/ # Sample application code
+├── Dockerfile
+└── assets/
+└── eks-pipeline-architecture.png
+
+yaml
+Copy
+Edit
+
 ---
 
 ## 💼 Business Use Case
@@ -71,20 +87,20 @@ This project enables scalable deployments to Amazon EKS with full automation and
 
 ## 📈 Business Value
 
-- **Automation:** Zero manual deployment steps after code push
-- **Scalability:** Built on Kubernetes via AWS EKS
-- **Security:** IAM-managed roles with least privilege access
-- **Resilience:** Jenkins logs and EKS self-healing ensure uptime
-- **Speed to Market:** From code to deployment in minutes
+- **Automation:** Zero manual deployment steps after code push  
+- **Scalability:** Built on Kubernetes via AWS EKS  
+- **Security:** IAM-managed roles with least privilege access  
+- **Resilience:** Jenkins logs and EKS self-healing ensure uptime  
+- **Speed to Market:** From code to deployment in minutes  
 
 ---
 
 ## 🔮 Future Enhancements
 
-- [ ] Add Helm templating for Kubernetes deployments
-- [ ] Add Prometheus/Grafana monitoring stack
-- [ ] Use GitHub Actions for pipeline instead of Jenkins
-- [ ] Implement Blue/Green or Canary deployments
+- [ ] Add Helm templating for Kubernetes deployments  
+- [ ] Add Prometheus/Grafana monitoring stack  
+- [ ] Use GitHub Actions for pipeline instead of Jenkins  
+- [ ] Implement Blue/Green or Canary deployments  
 
 ---
 
@@ -97,4 +113,3 @@ Crafted by **[Malcolm Sesay](https://www.linkedin.com/in/malcolmsesay/)** — Le
 ## 🏷️ Tags
 
 `#AWS` `#DevOps` `#Terraform` `#CI/CD` `#Kubernetes` `#Jenkins` `#EKS` `#CloudEngineering` `#InfrastructureAsCode`
-
