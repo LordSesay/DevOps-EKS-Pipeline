@@ -63,6 +63,8 @@ Modern application delivery faces challenges such as:
 
 ## 🛠 Folder Structure
 
+```
+.
 ├── Jenkinsfile # CI/CD pipeline definition
 ├── terraform/ # IaC for EKS, VPC, IAM, ECR
 ├── k8s/ # Kubernetes manifests (deployment, service)
@@ -70,6 +72,8 @@ Modern application delivery faces challenges such as:
 ├── Dockerfile
 └── assets/
 └── eks-pipeline-architecture.png
+```
+
 ---
 
 ## 💼 Business Use Case
