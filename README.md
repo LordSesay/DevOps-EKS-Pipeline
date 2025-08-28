@@ -56,14 +56,13 @@ Modern application delivery faces challenges such as:
 ## 🧩 Architecture Diagram
 
 <p align="center">
-  <img src="assets/eks-pipeline-architecture.png" alt="EKS Pipeline Architecture" width="80%">
+  <img src="EKSpipeline.png" alt="EKS Pipeline Architecture" width="80%">
 </p>
 
 ---
 
 ## 🛠 Folder Structure
 
-.
 ├── Jenkinsfile # CI/CD pipeline definition
 ├── terraform/ # IaC for EKS, VPC, IAM, ECR
 ├── k8s/ # Kubernetes manifests (deployment, service)
